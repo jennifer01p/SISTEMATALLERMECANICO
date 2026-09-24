@@ -74,12 +74,12 @@ public class ServiceOrder {
     }
 
     public double calculateTaxes(){
-        double taxes = calculateSubtotal() * 0.3; 
+        double taxes = calculateSubtotal() * 0.13; 
         return taxes; 
     }
 
     public double calculateTotal(int completedService){
-        total = calculateSubtotal()-calculateTaxes()-applyDiscount(completedService);
+        total = calculateSubtotal()+calculateTaxes()-applyDiscount(completedService);
         return total;
     }
 
