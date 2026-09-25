@@ -115,7 +115,7 @@ public class ServiceOrder {
     }
 
     public double calculateTotal(int completedService){
-        total = calculateSubtotal()+calculateTaxes()-applyDiscount(completedService);
+        total = calculateSubtotal()+calculateTaxes()-calculateDiscount(completedService);
         return total;
     }
 
