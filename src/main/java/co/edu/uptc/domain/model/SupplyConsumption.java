@@ -1,7 +1,8 @@
 package co.edu.uptc.domain.model;
 
 public class SupplyConsumption {
-
+    private String code;
+    private String name;
     private int quantity;
     private double unitPrice;
     private double subtotal;
@@ -10,10 +11,28 @@ public class SupplyConsumption {
     public SupplyConsumption() {
     }
 
-    public SupplyConsumption(int quantity, double unitPrice) {
+    public SupplyConsumption(String code, String name, int quantity, double unitPrice, double subtotal) {
+        this.code = code;
+        this.name = name;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.subtotal = quantity * unitPrice;
+        this.subtotal = subtotal;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getQuantity() {
@@ -47,11 +66,7 @@ public class SupplyConsumption {
 
     @Override
     public String toString() {
-        return "SupplyConsumption [quantity=" + quantity + ", unitPrice=" + unitPrice + ", subtotal=" + subtotal + "]";
+        return "SupplyConsumption [code=" + code + ", name=" + name + ", quantity=" + quantity + ", unitPrice="
+                + unitPrice + ", subtotal=" + subtotal + "]";
     }
-
-    
-    
-
-    
 }
