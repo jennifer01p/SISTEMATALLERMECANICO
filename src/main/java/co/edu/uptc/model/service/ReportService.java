@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 import co.edu.uptc.domain.model.ServiceOrder;
 import co.edu.uptc.domain.model.SparePart;
-import co.edu.uptc.model.repository.IServiceOrderRepository;
-import co.edu.uptc.model.repository.ISparePartRepository;
+import co.edu.uptc.domain.repository.IServiceOrderRepository;
+import co.edu.uptc.domain.repository.ISparePartRepository;
 import co.edu.uptc.util.JsonExporter;
 
 public class ReportService {
