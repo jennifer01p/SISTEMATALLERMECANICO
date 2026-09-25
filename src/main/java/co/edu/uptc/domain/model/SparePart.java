@@ -22,6 +22,14 @@ public class SparePart {
         return unitPrice;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
