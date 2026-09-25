@@ -132,5 +132,4 @@ public class ServiceOrder {
         return "ServiceOrder [id=" + id + ", entryDate=" + entryDate + ", diagnosis=" + diagnosis + ", workHours="
                 + workHours + ", status=" + status + ", discount=" + discount + ", total=" + total + "]";
     } 
-
 }
