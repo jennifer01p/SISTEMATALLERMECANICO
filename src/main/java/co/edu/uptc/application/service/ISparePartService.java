@@ -10,8 +10,6 @@ public interface ISparePartService {
 
     SparePart restockSparePart(String code, int additionalQuantity);
 
-    SparePart registerOrRestock(String code, String name, double unitPrice, int quantity);
-
     boolean hasEnoughStock(String code, int quantity);
 
     boolean discountStock(String code, int quantity);

@@ -6,7 +6,7 @@ import co.edu.uptc.domain.model.SparePart;
 
 public interface ISparePartRepository {
     
-    boolean save(SparePart part);
+    void save(SparePart part);
 
     SparePart findByCode(String code);
 
