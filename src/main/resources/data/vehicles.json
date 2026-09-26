@@ -1,0 +1,23 @@
+[
+  {
+    "licensePlate": "ABC123",
+    "brand": "Mazda",
+    "model": "3",
+    "year": "2020",
+    "mileage": 50000
+  },
+  {
+    "licensePlate": "DEF456",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": "2022",
+    "mileage": 30000
+  },
+  {
+    "licensePlate": "GHI789",
+    "brand": "Chevrolet",
+    "model": "Onix",
+    "year": "2021",
+    "mileage": 40000
+  }
+]

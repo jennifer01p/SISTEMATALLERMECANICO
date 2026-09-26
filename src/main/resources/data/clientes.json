@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Carlos Ramirez",
+    "phone": "3101234567"
+  },
+  {
+    "id": 2,
+    "name": "Laura Gomez",
+    "phone": "3129876543"
+  },
+  {
+    "id": 3,
+    "name": "Andres Torres",
+    "phone": "3115558899"
+  }
+]
