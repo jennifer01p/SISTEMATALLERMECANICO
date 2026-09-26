@@ -11,7 +11,9 @@ import co.edu.uptc.domain.model.ServiceOrder;
 import co.edu.uptc.domain.model.SparePart;
 import co.edu.uptc.domain.model.SupplyConsumption;
 import co.edu.uptc.domain.model.Vehicle;
+import co.edu.uptc.domain.repository.IMechanicRepository;
 import co.edu.uptc.domain.repository.IServiceOrderRepository;
+import co.edu.uptc.domain.repository.IVehicleRepository;
 import co.edu.uptc.enums.OrderStatus;
 
 public class ServiceOrderService implements IServiceOrderService{
@@ -20,6 +22,7 @@ public class ServiceOrderService implements IServiceOrderService{
     private final ISparePartService sparePartService;
     private final IVehicleRepository vehicleRepository;
     private final IMechanicRepository mechanicRepository;
+    
 
     public ServiceOrderService(IServiceOrderRepository repository, ISparePartService sparePartService,
             IVehicleRepository vehicleRepository, IMechanicRepository mechanicRepository) {
@@ -70,13 +73,18 @@ public class ServiceOrderService implements IServiceOrderService{
     @Override
     public boolean registerWorkedHours(int orderId, double hours) {
         ServiceOrder order = findById(orderId);
-
+        order.setWorkHours(hours);
+        repository.update(order);
+        return true;
     }
 
     @Override
     public ServiceOrder closeOrder(int orderId, int clientCompletedServices) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'closeOrder'");
+        ServiceOrder order = findById(orderId);
+        order.setStatus(OrderStatus.READY_FOR_DELIVERY);
+        order.calculateTotal(clientCompletedServices);
+        repository.update(order);
+        return order;
     }
 
     @Override
