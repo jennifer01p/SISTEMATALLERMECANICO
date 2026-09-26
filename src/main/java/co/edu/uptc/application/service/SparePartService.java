@@ -10,7 +10,7 @@ import co.edu.uptc.domain.repository.ISparePartRepository;
 
 public class SparePartService implements ISparePartService{
 
-    public final ISparePartRepository repository;
+    private final ISparePartRepository repository;
 
     public SparePartService(ISparePartRepository repository) {
         this.repository = repository;

@@ -1,5 +1,6 @@
 package co.edu.uptc.domain.model;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uptc.enums.OrderStatus;
@@ -19,16 +20,20 @@ public class ServiceOrder {
 
     public ServiceOrder() {
     }
-    public ServiceOrder(int id, LocalDate entryDate, String diagnosis, double workHours, OrderStatus status,
-            double discount, double total) {
+
+    public ServiceOrder(int id, Vehicle vehicle, Mechanic mechanic, LocalDate entryDate, String diagnosis, double workHours, OrderStatus status, double discount, double total) {
         this.id = id;
+        this.vehicle = vehicle;
+        this.mechanic = mechanic;
         this.entryDate = entryDate;
         this.diagnosis = diagnosis;
         this.workHours = workHours;
         this.status = status;
         this.discount = discount;
         this.total = total;
+        this.supplyConsumptions = new ArrayList<>();
     }
+
     public String getDiagnosis() {
         return diagnosis;
     }
