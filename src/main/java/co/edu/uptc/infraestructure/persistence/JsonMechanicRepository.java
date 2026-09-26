@@ -18,7 +18,7 @@ import co.edu.uptc.domain.repository.IMechanicRepository;
 
 public class JsonMechanicRepository implements IMechanicRepository {
 
-    private static final String FILE_PATH = "ssistematallermecanico\\src\\main\\resources\\data\\mechanics.json";
+    private static final String FILE_PATH = "sistematallermecanico\\src\\main\\resources\\data\\mechanics.json";
 
     private final Gson gson;
     private List<Mechanic> mechanics;
