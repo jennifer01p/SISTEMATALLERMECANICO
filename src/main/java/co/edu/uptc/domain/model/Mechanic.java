@@ -34,8 +34,16 @@ public class Mechanic extends Person {
 
     @Override
     public String toString() {
-        return "Mechanic [specialty=" + specialty + ", hourlyRate=" + hourlyRate + "]";
+        return "Mecánico\n" +
+           "ID: " + getId() + "\n" +
+           "Nombre: " + getName() + "\n" +
+           "Especialidad: " + getSpecialty() + "\n" +
+           "Teléfono: " + getPhone() + "\n" +
+           "Tarifa por hora: $" + getHourlyRate();
     }
+
+  
+    
 
     
 

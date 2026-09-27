@@ -12,8 +12,14 @@ public class Client extends Person {
 
     @Override
     public String toString() {
-        return "Client [id=" + getId() + ", name=" + getName() + ", phone=" + getPhone() + "]";
+        return "Cliente\n" +
+           "ID:        " + getId() + "\n" +
+           "Nombre:    " + getName() + "\n" +
+           "Teléfono:  " + getPhone() + "\n" ;
+           
     }
+
+    
 
 
 

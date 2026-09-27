@@ -70,9 +70,16 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle [licensePlate=" + licensePlate + ", brand=" + brand + ", model=" + model + ", year=" + year
-                + ", mileage=" + mileage + "]";
+        return "Vehicle\n" +
+           "Placa:       " + licensePlate + "\n" +
+           "Marca:       " + brand + "\n" +
+           "Modelo:      " + model + "\n" +
+           "Año:         " + year + "\n" +
+           "Kilometraje: " + mileage + "\n" ;
     }
+
+
+    
 
     
 
