@@ -57,15 +57,18 @@ public class JsonVehicleRepository implements IVehicleRepository {
         }
     }
 
-    @Override
+    
+   @Override
     public boolean save(Vehicle vehicle) {
-
+       if (findByLicensePlate(vehicle.getLicensePlate()) != null) {
+        return false;
+        }
         vehicles.add(vehicle);
         writeToFile(vehicles);
-
         return true;
     }
 
+    
     @Override
     public Vehicle findByLicensePlate(String licensePlate) {
 
