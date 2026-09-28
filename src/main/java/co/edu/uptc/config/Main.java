@@ -30,6 +30,7 @@ import co.edu.uptc.presentation.controller.ReportConsoleView;
 import co.edu.uptc.presentation.controller.ServiceOrderConsoleView;
 import co.edu.uptc.presentation.controller.SparePartConsoleView;
 import co.edu.uptc.presentation.controller.VehicleConsoleView;
+import co.edu.uptc.util.InputUtil;
 import co.edu.uptc.util.MessageProvider;
 
 
@@ -75,8 +76,7 @@ public class Main {
                     + MessageProvider.get("mainmenu.8");
 
             System.out.println(menu);
-            int opcion = sc.nextInt();
-            sc.nextLine();
+            int opcion = InputUtil.readInt(sc);
 
             switch (opcion) {
                 case 1:
