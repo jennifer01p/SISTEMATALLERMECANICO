@@ -3,27 +3,27 @@ package co.edu.uptc.config;
 import java.util.Scanner;
 
 import co.edu.uptc.application.service.ClientService;
-import co.edu.uptc.application.service.MechanicService;
-import co.edu.uptc.application.service.VehicleService;
-import co.edu.uptc.application.service.ISparePartService;
-import co.edu.uptc.application.service.SparePartService;
 import co.edu.uptc.application.service.IServiceOrderService;
+import co.edu.uptc.application.service.ISparePartService;
+import co.edu.uptc.application.service.MechanicService;
 import co.edu.uptc.application.service.ServiceOrderService;
+import co.edu.uptc.application.service.SparePartService;
+import co.edu.uptc.application.service.VehicleService;
 import co.edu.uptc.domain.repository.IClientRepository;
 import co.edu.uptc.domain.repository.IMechanicRepository;
-import co.edu.uptc.domain.repository.IVehicleRepository;
-import co.edu.uptc.domain.repository.ISparePartRepository;
 import co.edu.uptc.domain.repository.IServiceOrderRepository;
+import co.edu.uptc.domain.repository.ISparePartRepository;
+import co.edu.uptc.domain.repository.IVehicleRepository;
 import co.edu.uptc.infraestructure.persistence.JsonClientRepository;
 import co.edu.uptc.infraestructure.persistence.JsonMechanicRepository;
-import co.edu.uptc.infraestructure.persistence.JsonVehicleRepository;
-import co.edu.uptc.infraestructure.persistence.JsonSparePartRepository;
 import co.edu.uptc.infraestructure.persistence.JsonServiceOrderRepository;
+import co.edu.uptc.infraestructure.persistence.JsonSparePartRepository;
+import co.edu.uptc.infraestructure.persistence.JsonVehicleRepository;
 import co.edu.uptc.presentation.controller.ClientConsoleView;
 import co.edu.uptc.presentation.controller.MechanicConsoleView;
-import co.edu.uptc.presentation.controller.VehicleConsoleView;
-import co.edu.uptc.presentation.controller.SparePartConsoleView;
 import co.edu.uptc.presentation.controller.ServiceOrderConsoleView;
+import co.edu.uptc.presentation.controller.SparePartConsoleView;
+import co.edu.uptc.presentation.controller.VehicleConsoleView;
 import co.edu.uptc.util.MessageProvider;
 
 

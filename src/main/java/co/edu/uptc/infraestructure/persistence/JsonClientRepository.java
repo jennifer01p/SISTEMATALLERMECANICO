@@ -18,7 +18,7 @@ import co.edu.uptc.domain.repository.IClientRepository;
 
 public class JsonClientRepository implements IClientRepository {
 
-    private static final String FILE_PATH = "sistematallermecanico\\src\\main\\resources\\data\\clientes.json";
+    private static final String FILE_PATH = "src\\main\\resources\\data\\clientes.json";
 
     private final Gson gson;
     private List<Client> clients;

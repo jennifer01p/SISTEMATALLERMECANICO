@@ -18,7 +18,7 @@ import co.edu.uptc.domain.repository.IVehicleRepository;
 
 public class JsonVehicleRepository implements IVehicleRepository {
 
-    private static final String FILE_PATH = "sistematallermecanico\\src\\main\\resources\\data\\vehicles.json";
+    private static final String FILE_PATH = "src\\main\\resources\\data\\vehicles.json";
 
     private final Gson gson;
     private List<Vehicle> vehicles;
