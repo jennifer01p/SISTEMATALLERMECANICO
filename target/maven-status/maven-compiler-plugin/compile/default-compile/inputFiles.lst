@@ -39,6 +39,8 @@ C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\model\
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\model\service\ReportService.java
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\presentation\controller\ClientConsoleView.java
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\presentation\controller\MechanicConsoleView.java
+C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\presentation\controller\ServiceOrderConsoleView.java
+C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\presentation\controller\SparePartConsoleView.java
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\presentation\controller\VehicleConsoleView.java
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\util\JsonExporter.java
 C:\ProyectoTallerMecanico\sistematallermecanico\src\main\java\co\edu\uptc\util\MessageProvider.java
