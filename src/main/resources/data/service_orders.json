@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "vehicle": {
+      "licensePlate": "CCC187",
+      "brand": "Nissan",
+      "model": "Note ",
+      "year": "2024",
+      "mileage": 200000.0
+    },
+    "mechanic": {
+      "specialty": "BRAKES",
+      "hourlyRate": 3000.0,
+      "id": 1,
+      "name": "Fernando Castillo",
+      "phone": "3101234567"
+    },
+    "supplyConsumptions": [],
+    "entryDate": "2026-09-27",
+    "diagnosis": "Filtro desgastado",
+    "workHours": 0.0,
+    "status": "ENTERED",
+    "discount": 0.0,
+    "total": 0.0
+  }
+]

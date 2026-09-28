@@ -7,7 +7,7 @@ import co.edu.uptc.enums.OrderStatus;
 
 public interface IServiceOrderService {
 
-    ServiceOrder createOrder(int id, String vehiclePlate, int mechanicId, String diagnosis);
+    ServiceOrder createOrder(String vehiclePlate, int mechanicId, String diagnosis);
 
     boolean addSparePart(int orderId, String sparePartCode, int quantity);
 

@@ -4,20 +4,27 @@
     "brand": "Mazda",
     "model": "3",
     "year": "2020",
-    "mileage": 50000
+    "mileage": 50000.0
   },
   {
     "licensePlate": "DEF456",
     "brand": "Toyota",
     "model": "Corolla",
     "year": "2022",
-    "mileage": 30000
+    "mileage": 30000.0
   },
   {
     "licensePlate": "GHI789",
     "brand": "Chevrolet",
     "model": "Onix",
     "year": "2021",
-    "mileage": 40000
+    "mileage": 40000.0
+  },
+  {
+    "licensePlate": "CCC187",
+    "brand": "Nissan",
+    "model": "Note ",
+    "year": "2024",
+    "mileage": 200000.0
   }
 ]

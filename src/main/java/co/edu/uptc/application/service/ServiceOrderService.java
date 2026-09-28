@@ -33,7 +33,7 @@ public class ServiceOrderService implements IServiceOrderService{
     }
 
     @Override
-    public ServiceOrder createOrder(int id, String vehiclePlate, int mechanicId, String diagnosis) {
+    public ServiceOrder createOrder(String vehiclePlate, int mechanicId, String diagnosis) {
         Vehicle vehicle = vehicleRepository.findByLicensePlate(vehiclePlate);
         Mechanic mechanic = mechanicRepository.findById(mechanicId);
 
@@ -44,7 +44,7 @@ public class ServiceOrderService implements IServiceOrderService{
             throw new MechanicNotFoundException("No existe ningun mecánico con ese Id");
         }
 
-        ServiceOrder newServiceOrder = new ServiceOrder(id, vehicle, mechanic, LocalDate.now(), diagnosis, 0, OrderStatus.ENTERED, 0, 0);
+        ServiceOrder newServiceOrder = new ServiceOrder(0, vehicle, mechanic, LocalDate.now(), diagnosis, 0, OrderStatus.ENTERED, 0, 0);
 
         repository.save(newServiceOrder);
         return newServiceOrder;

@@ -18,7 +18,7 @@ import co.edu.uptc.domain.repository.ISparePartRepository;
 
 public class JsonSparePartRepository implements ISparePartRepository {
 
-    private static final String FILE_PATH = "sistematallermecanico\\src\\main\\resources\\data\\spare_parts.json";
+    private static final String FILE_PATH = "src\\main\\resources\\data\\spare_parts.json";
 
     private final Gson gson;
     private List<SparePart> parts;

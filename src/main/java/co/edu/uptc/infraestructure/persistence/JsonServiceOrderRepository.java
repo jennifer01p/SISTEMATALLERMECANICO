@@ -22,9 +22,10 @@ import co.edu.uptc.domain.model.ServiceOrder;
 import co.edu.uptc.domain.repository.IServiceOrderRepository;
 
 public class JsonServiceOrderRepository implements IServiceOrderRepository{
-    private static final String FILE_PATH = "sistematallermecanico\\src\\main\\resources\\data\\service_orders.json";
+    private static final String FILE_PATH = "src\\main\\resources\\data\\service_orders.json";
     private final Gson gson;
     private List<ServiceOrder> orders;
+    private int nextId;
 
     public JsonServiceOrderRepository() {
         this.gson = new GsonBuilder()
@@ -35,6 +36,7 @@ public class JsonServiceOrderRepository implements IServiceOrderRepository{
                 LocalDate.parse(json.getAsString(), DateTimeFormatter.ISO_LOCAL_DATE))
             .create();
         this.orders = loadData();
+        this.nextId = calculateNextId();
     }
     
     private List<ServiceOrder> loadData() {
@@ -68,11 +70,15 @@ public class JsonServiceOrderRepository implements IServiceOrderRepository{
 
     @Override
     public boolean save(ServiceOrder order) {
-
+        order.setId(nextId);
+        nextId++;
         orders.add(order);
         writeToFile(orders);
-
         return true;
+    }
+
+    private int calculateNextId() {
+        return orders.stream().mapToInt(ServiceOrder::getId).max().orElse(0) + 1;
     }
 
     @Override
