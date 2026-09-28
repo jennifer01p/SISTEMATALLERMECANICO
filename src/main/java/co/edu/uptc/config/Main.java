@@ -2,10 +2,13 @@ package co.edu.uptc.config;
 
 import java.util.Scanner;
 
+import co.edu.uptc.application.service.BillingService;
 import co.edu.uptc.application.service.ClientService;
+import co.edu.uptc.application.service.IReportService;
 import co.edu.uptc.application.service.IServiceOrderService;
 import co.edu.uptc.application.service.ISparePartService;
 import co.edu.uptc.application.service.MechanicService;
+import co.edu.uptc.application.service.ReportService;
 import co.edu.uptc.application.service.ServiceOrderService;
 import co.edu.uptc.application.service.SparePartService;
 import co.edu.uptc.application.service.VehicleService;
@@ -19,8 +22,11 @@ import co.edu.uptc.infraestructure.persistence.JsonMechanicRepository;
 import co.edu.uptc.infraestructure.persistence.JsonServiceOrderRepository;
 import co.edu.uptc.infraestructure.persistence.JsonSparePartRepository;
 import co.edu.uptc.infraestructure.persistence.JsonVehicleRepository;
+import co.edu.uptc.presentation.controller.BillingConsoleView;
+import co.edu.uptc.presentation.controller.BillingReportsConsoleView;
 import co.edu.uptc.presentation.controller.ClientConsoleView;
 import co.edu.uptc.presentation.controller.MechanicConsoleView;
+import co.edu.uptc.presentation.controller.ReportConsoleView;
 import co.edu.uptc.presentation.controller.ServiceOrderConsoleView;
 import co.edu.uptc.presentation.controller.SparePartConsoleView;
 import co.edu.uptc.presentation.controller.VehicleConsoleView;
@@ -44,11 +50,17 @@ public class Main {
         IServiceOrderService serviceOrderService = new ServiceOrderService(
                 serviceOrderRepository, sparePartService, vehicleRepository, mechanicRepository);
 
+        BillingService billingService = new BillingService(serviceOrderRepository);
+        IReportService reportService = new ReportService(serviceOrderRepository, sparePartRepository);
+
         ClientConsoleView clientView = new ClientConsoleView(clientService, sc);
         VehicleConsoleView vehicleView = new VehicleConsoleView(vehicleService, sc);
         MechanicConsoleView mechanicView = new MechanicConsoleView(mechanicService, sc);
         SparePartConsoleView sparePartView = new SparePartConsoleView(sparePartService, sc);
         ServiceOrderConsoleView serviceOrderView = new ServiceOrderConsoleView(serviceOrderService, sc);
+        BillingConsoleView billingView = new BillingConsoleView(billingService, sc);
+        ReportConsoleView reportView = new ReportConsoleView(reportService, sc);
+        BillingReportsConsoleView billingReportsView = new BillingReportsConsoleView(billingView, reportView, sc);
 
         boolean salir = false;
 
@@ -83,6 +95,7 @@ public class Main {
                     sparePartView.showMenu();
                     break;
                 case 6:
+                    billingReportsView.showMenu();
                     break;
                 case 7:
                     changeLanguage(sc);
