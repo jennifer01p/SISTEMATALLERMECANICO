@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import co.edu.uptc.application.service.ISparePartService;
 import co.edu.uptc.domain.model.SparePart;
+import co.edu.uptc.util.InputUtil;
 import co.edu.uptc.util.MessageProvider;
 
 public class SparePartConsoleView {
@@ -60,11 +61,9 @@ public class SparePartConsoleView {
             System.out.println(MessageProvider.get("sparepart.prompt.name"));
             String name = sc.nextLine();
             System.out.println(MessageProvider.get("sparepart.prompt.price"));
-            double price = sc.nextDouble();
-            sc.nextLine();
+            double price = InputUtil.readDouble(sc);
             System.out.println(MessageProvider.get("sparepart.prompt.initialstock"));
-            int initialStock = sc.nextInt();
-            sc.nextLine();
+            int initialStock = InputUtil.readInt(sc);
 
             SparePart part = sparePartService.registerNewSparePart(code, name, price, initialStock);
             System.out.println(MessageProvider.get("sparepart.msg.registered") + " " + part);
@@ -79,8 +78,7 @@ public class SparePartConsoleView {
             System.out.println(MessageProvider.get("sparepart.prompt.code"));
             String code = sc.nextLine();
             System.out.println(MessageProvider.get("sparepart.prompt.quantity"));
-            int quantity = sc.nextInt();
-            sc.nextLine();
+            int quantity = InputUtil.readInt(sc);
 
             SparePart part = sparePartService.restockSparePart(code, quantity);
             System.out.println(MessageProvider.get("sparepart.msg.restocked") + " " + part);

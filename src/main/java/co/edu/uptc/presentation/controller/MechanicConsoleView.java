@@ -6,6 +6,7 @@ import java.util.Scanner;
 import co.edu.uptc.application.service.MechanicService;
 import co.edu.uptc.domain.model.Mechanic;
 import co.edu.uptc.enums.MechanicSpecialty;
+import co.edu.uptc.util.InputUtil;
 import co.edu.uptc.util.MessageProvider;
 
 public class MechanicConsoleView {
@@ -59,8 +60,7 @@ public class MechanicConsoleView {
 
     public MechanicSpecialty editSpecialty() {
         System.out.println(MessageProvider.get("mechanic.specialty.title"));
-        int opcion = sc.nextInt();
-        sc.nextLine();
+        int opcion = InputUtil.readInt(sc);
         MechanicSpecialty specialty;
         switch (opcion) {
             case 1:
@@ -89,8 +89,7 @@ public class MechanicConsoleView {
             String phone = sc.nextLine();
             MechanicSpecialty mechanicSpecialty = editSpecialty();
             System.out.println(MessageProvider.get("mechanic.prompt.rate"));
-            double hourlyRate = sc.nextDouble();
-            sc.nextLine();
+            double hourlyRate = InputUtil.readDouble(sc);
             Mechanic mechanic = new Mechanic(0, name, phone, mechanicSpecialty, hourlyRate);
             mechanicService.register(mechanic);
             System.out.println(MessageProvider.get("mechanic.msg.registered"));
@@ -102,7 +101,7 @@ public class MechanicConsoleView {
     public void findByIdMechanic() {
         try {
             System.out.println(MessageProvider.get("mechanic.prompt.id.search"));
-            int id = sc.nextInt();
+            int id = InputUtil.readInt(sc);
             Mechanic mechanic = mechanicService.findById(id);
             if (mechanic != null) {
                 System.out.println(MessageProvider.get("mechanic.msg.found") + " " + mechanic);
@@ -125,7 +124,7 @@ public class MechanicConsoleView {
     public void update() {
         try {
             System.out.println(MessageProvider.get("mechanic.prompt.id.update"));
-            int id = sc.nextInt();
+            int id = InputUtil.readInt(sc);
             sc.nextLine();
             Mechanic mechanic = mechanicService.findById(id);
             if (mechanic != null) {
@@ -135,8 +134,7 @@ public class MechanicConsoleView {
                 MechanicSpecialty mechanicSpecialty = editSpecialty();
                 mechanic.setSpecialty(mechanicSpecialty);
                 System.out.println(MessageProvider.get("mechanic.prompt.newrate"));
-                double hourlyRate = sc.nextDouble();
-                sc.nextLine();
+                double hourlyRate = InputUtil.readDouble(sc);
                 mechanic.setHourlyRate(hourlyRate);
                 mechanicService.update(mechanic);
                 System.out.println(MessageProvider.get("mechanic.msg.updated") + " " + mechanic);
@@ -151,7 +149,7 @@ public class MechanicConsoleView {
     public void delete() {
         try {
             System.out.println(MessageProvider.get("mechanic.prompt.id.delete"));
-            int id = sc.nextInt();
+            int id = InputUtil.readInt(sc);
             boolean deleted = mechanicService.delete(id);
             System.out.println(deleted
                     ? MessageProvider.get("mechanic.msg.deleted")

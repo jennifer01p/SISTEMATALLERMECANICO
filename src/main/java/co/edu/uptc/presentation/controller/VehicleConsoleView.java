@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import co.edu.uptc.application.service.VehicleService;
 import co.edu.uptc.domain.model.Vehicle;
+import co.edu.uptc.util.InputUtil;
 import co.edu.uptc.util.MessageProvider;
 
 public class VehicleConsoleView {
@@ -29,8 +30,7 @@ public class VehicleConsoleView {
 
         while (!volver) {
             System.out.println(menu);
-            int opcion = sc.nextInt();
-            sc.nextLine();
+            int opcion = InputUtil.readInt(sc);
 
             switch (opcion) {
                 case 1:
@@ -68,8 +68,7 @@ public class VehicleConsoleView {
             System.out.println(MessageProvider.get("vehicle.prompt.year"));
             String year = sc.nextLine();
             System.out.println(MessageProvider.get("vehicle.prompt.mileage"));
-            double mileage = sc.nextDouble();
-            sc.nextLine();
+            double mileage = InputUtil.readDouble(sc);
 
             Vehicle vehicle = new Vehicle(licensePlate, brand, model, year, mileage);
             boolean saved = vehicleService.register(vehicle);
