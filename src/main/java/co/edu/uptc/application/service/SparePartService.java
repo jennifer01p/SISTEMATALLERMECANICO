@@ -4,6 +4,7 @@ import java.util.List;
 
 import co.edu.uptc.domain.exception.DuplicateCodeException;
 import co.edu.uptc.domain.exception.InsufficientStockException;
+import co.edu.uptc.domain.exception.InvalidQuantityException;
 import co.edu.uptc.domain.exception.SparePartNotFoundException;
 import co.edu.uptc.domain.model.SparePart;
 import co.edu.uptc.domain.repository.ISparePartRepository;
@@ -23,6 +24,14 @@ public class SparePartService implements ISparePartService{
             throw new DuplicateCodeException("El repuesto ya existe");
         }
 
+        if(unitPrice <= 0){
+            throw new InvalidQuantityException("El precio unitario debe ser mayor a cero");
+        }
+
+        if(initialStock < 0){
+            throw new InvalidQuantityException("El stock inicial no puede ser negativo");
+        }
+
         SparePart newPart = new SparePart(code, name, unitPrice, initialStock);
         repository.save(newPart);
         return newPart;
@@ -34,6 +43,10 @@ public class SparePartService implements ISparePartService{
 
         if(part == null){
             throw new SparePartNotFoundException("No existen repuestos con ese codigo");
+        }
+
+        if(additionalQuantity <= 0){
+            throw new InvalidQuantityException("La cantidad a reabastecer debe ser mayor a cero");
         }
 
         int currentStock = part.getStock();
@@ -55,6 +68,10 @@ public class SparePartService implements ISparePartService{
 
     @Override
     public boolean discountStock(String code, int quantity) {
+
+        if(quantity <= 0){
+            throw new InvalidQuantityException("La cantidad a descontar debe ser mayor a cero");
+        }
 
         SparePart part = repository.findByCode(code);
         
