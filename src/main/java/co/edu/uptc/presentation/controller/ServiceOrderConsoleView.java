@@ -6,6 +6,7 @@ import java.util.Scanner;
 import co.edu.uptc.application.service.IServiceOrderService;
 import co.edu.uptc.domain.model.ServiceOrder;
 import co.edu.uptc.enums.OrderStatus;
+import co.edu.uptc.util.InputUtil;
 import co.edu.uptc.util.MessageProvider;
 
 public class ServiceOrderConsoleView {
@@ -68,8 +69,7 @@ public class ServiceOrderConsoleView {
 
     public OrderStatus selectStatus() {
         System.out.println(MessageProvider.get("serviceorder.status.title"));
-        int opcion = sc.nextInt();
-        sc.nextLine();
+        int opcion = InputUtil.readInt(sc);
         OrderStatus status;
         switch (opcion) {
             case 1:
@@ -98,8 +98,7 @@ public class ServiceOrderConsoleView {
             System.out.println(MessageProvider.get("serviceorder.prompt.plate"));
             String plate = sc.nextLine();
             System.out.println(MessageProvider.get("serviceorder.prompt.mechanicid"));
-            int mechanicId = sc.nextInt();
-            sc.nextLine();
+            int mechanicId = InputUtil.readInt(sc);
             System.out.println(MessageProvider.get("serviceorder.prompt.diagnosis"));
             String diagnosis = sc.nextLine();
 
@@ -133,8 +132,7 @@ public class ServiceOrderConsoleView {
     public void changeStatus() {
         try {
             System.out.println(MessageProvider.get("serviceorder.prompt.id"));
-            int orderId = sc.nextInt();
-            sc.nextLine();
+            int orderId = InputUtil.readInt(sc);
             OrderStatus newStatus = selectStatus();
 
             serviceOrderService.changeStatus(orderId, newStatus);
@@ -148,11 +146,9 @@ public class ServiceOrderConsoleView {
     public void registerWorkedHours() {
         try {
             System.out.println(MessageProvider.get("serviceorder.prompt.id"));
-            int orderId = sc.nextInt();
-            sc.nextLine();
+            int orderId = InputUtil.readInt(sc);
             System.out.println(MessageProvider.get("serviceorder.prompt.hours"));
-            double hours = sc.nextDouble();
-            sc.nextLine();
+            double hours = InputUtil.readDouble(sc);
 
             serviceOrderService.registerWorkedHours(orderId, hours);
             System.out.println(MessageProvider.get("serviceorder.msg.hoursregistered"));
@@ -165,11 +161,9 @@ public class ServiceOrderConsoleView {
     public void closeOrder() {
         try {
             System.out.println(MessageProvider.get("serviceorder.prompt.id"));
-            int orderId = sc.nextInt();
-            sc.nextLine();
+            int orderId = InputUtil.readInt(sc);
             System.out.println(MessageProvider.get("serviceorder.prompt.completedservices"));
-            int completedServices = sc.nextInt();
-            sc.nextLine();
+            int completedServices = InputUtil.readInt(sc);
 
             ServiceOrder order = serviceOrderService.closeOrder(orderId, completedServices);
             System.out.println(MessageProvider.get("serviceorder.msg.closed") + " " + order);
@@ -182,7 +176,7 @@ public class ServiceOrderConsoleView {
     public void findById() {
         try {
             System.out.println(MessageProvider.get("serviceorder.prompt.id"));
-            int id = sc.nextInt();
+            int id = InputUtil.readInt(sc);
             ServiceOrder order = serviceOrderService.findById(id);
             System.out.println(MessageProvider.get("serviceorder.msg.found") + " " + order);
         } catch (Exception e) {

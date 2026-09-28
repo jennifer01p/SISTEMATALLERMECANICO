@@ -98,7 +98,7 @@ public class SparePartConsoleView {
             System.out.println(MessageProvider.get("common.error.prefix") + e.getMessage());
         }
     }
-
+    
     public void findAll() {
         List<SparePart> parts = sparePartService.findAll();
         if (parts.isEmpty()) {

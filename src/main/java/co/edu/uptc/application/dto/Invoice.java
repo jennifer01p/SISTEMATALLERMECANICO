@@ -1,4 +1,4 @@
-package co.edu.uptc.model.service;
+package co.edu.uptc.application.dto;
 
 public class Invoice {
     private int orderId;
@@ -8,7 +8,8 @@ public class Invoice {
     private double discount;
     private double total;
 
-    public Invoice() {}
+    public Invoice() {
+    }
 
     public Invoice(int orderId, double laborCost, double materialsCost, double taxes, double discount, double total) {
         this.orderId = orderId;
@@ -43,4 +44,14 @@ public class Invoice {
         return total;
     }
 
+    @Override
+    public String toString() {
+        return "Invoice\n" +
+                "Orden:            " + orderId + "\n" +
+                "Mano de obra:     " + laborCost + "\n" +
+                "Materiales:       " + materialsCost + "\n" +
+                "Impuestos (13%):  " + taxes + "\n" +
+                "Descuento:        " + discount + "\n" +
+                "Total:            " + total + "\n";
+    }
 }
