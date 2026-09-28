@@ -3,6 +3,7 @@ package co.edu.uptc.application.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import co.edu.uptc.domain.exception.InvalidQuantityException;
 import co.edu.uptc.domain.exception.MechanicNotFoundException;
 import co.edu.uptc.domain.exception.ServiceOrderNotFoundException;
 import co.edu.uptc.domain.exception.VehicleNotFoundException;
@@ -72,6 +73,11 @@ public class ServiceOrderService implements IServiceOrderService{
 
     @Override
     public boolean registerWorkedHours(int orderId, double hours) {
+        
+        if(hours <= 0){
+            throw new InvalidQuantityException("Las horas trabajadas deben ser mayores a cero");
+        }
+
         ServiceOrder order = findById(orderId);
         order.setWorkHours(hours);
         repository.update(order);
