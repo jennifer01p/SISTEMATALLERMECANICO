@@ -42,7 +42,7 @@
     "supplyConsumptions": [],
     "entryDate": "2026-09-27",
     "diagnosis": "falla motor",
-    "workHours": 4.0,
+    "workHours": -96.0,
     "status": "READY_FOR_DELIVERY",
     "discount": 0.0,
     "total": 0.0
