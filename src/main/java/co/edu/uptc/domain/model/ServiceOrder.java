@@ -134,7 +134,13 @@ public class ServiceOrder {
 
     @Override
     public String toString() {
-        return "ServiceOrder [id=" + id + ", entryDate=" + entryDate + ", diagnosis=" + diagnosis + ", workHours="
-                + workHours + ", status=" + status + ", discount=" + discount + ", total=" + total + "]";
+        return "ServiceOrder"+ "\n" +
+        "id=" + id + "\n" +
+        "EntryDate=" + getEntryDate() + "\n" +
+        "Diagnosis=" + getDiagnosis() + "\n" +
+        "WorkHours=" + getWorkHours() + "\n" +
+        ", status=" + getStatus() + "\n" +
+        ", discount=" + getDiscount() + "\n" +
+        ", total=" + getTotal();
     } 
 }

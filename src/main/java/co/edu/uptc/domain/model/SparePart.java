@@ -62,7 +62,11 @@ public class SparePart {
 
     @Override
     public String toString() {
-        return "SparePart [code=" + code + ", name=" + name + ", unitPrice=" + unitPrice + ", stock=" + stock + "]";
+        return "SparePart\n "+
+            "Code=" + getCode() + "\n" +
+            "Name=" + getName() + "\n" +
+            "UnitPrice=" + getUnitPrice() + "\n" +
+            "Stock=" + getStock();
     }
 
     
